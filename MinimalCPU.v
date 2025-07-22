@@ -1,5 +1,5 @@
-module MinimalCPU(input clk, input rst);
-    wire [15:0] pc, pc_next, instruction, read_data1, read_data2, alu_result;
+module MinimalCPU(input clk, input rst, output [15:0] pc, output [15:0] alu_result, output [15:0] instruction);
+    wire [15:0] pc_next, read_data1, read_data2;
     wire reg_write;
     wire [1:0] alu_op;
 

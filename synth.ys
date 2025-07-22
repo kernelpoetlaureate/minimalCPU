@@ -1,0 +1,11 @@
+read_verilog MinimalCPU.v ControlUnit.v ALU.v ProgramCounter.v RegisterFile.v InstructionMemory.v
+hierarchy -check -top MinimalCPU
+proc; opt; fsm; opt
+write_json MinimalCPU.json
+
+# Generate DOT format (shows all modules)
+show -format dot -prefix MinimalCPU
+
+# Generate SVG schematic (top module only)
+select MinimalCPU
+show -colors 2 -width -format svg -prefix MinimalCPU_schematic
